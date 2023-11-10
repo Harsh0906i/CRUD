@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .All {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .layout {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .anchor {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="All">
+        <div class="layout">
+            <h1>CRUD sample</h1>
+            <% for(post of posts){ %>
+                <div>
+                    <h3>
+                        Username:@<%=post.name %>
+                    </h3>
+                    <h3>
+                        Content:<%= post.area %>
+                    </h3>
+                    <a class="anchor" href="/home/<%= post.id %>">see in detail</a>
+                    <br>
+                    <br>
+                    <a class="anchor" href="/home/<%= post.id %>/edit">Edit</a>
+                    <form action="/home/<%= post.id %>?_method=DELETE" method="post">
+                        <br>
+                        <button>Delete</button>
+                    </form>
+                </div>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <% } %>
+                    <a class="anchor" href="/add">Add post</a>
+        </div>
+    </div>
+</body>
+
+</html>

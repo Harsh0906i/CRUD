@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+        .All {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .layout {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .anchor {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="All">
+        <h2>Edit post</h2>
+        <p>username:@<%=postid.name %>
+        </p>
+        <p>postId: <%=postid.id %>
+        </p>
+        <form method="post" action="/home/<%= postid.id %>?_method=PATCH">
+            <textarea name="area"><%= postid.content %></textarea>
+            <br>
+            <br>
+            <button type="submit">Edit</button>
+        </form>
+    </div>
+</body>
+
+</html>

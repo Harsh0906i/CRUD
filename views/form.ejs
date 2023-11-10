@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        .All {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .layout {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .anchor {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="All">
+        <h1>Add post</h1>
+        <form action="/post" method="post">
+            <input type="text" placeholder="Enter your name" name="name">
+            <br>
+            <br>
+            <textarea name="area" placeholder="Enter content" cols="30" rows="10"></textarea>
+            <br>
+            <br>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</body>
+
+</html>
