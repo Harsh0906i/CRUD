@@ -28,10 +28,10 @@ app.post("/post", (req, res) => {
     let { name, area } = req.body;
     let id = uuidv4();
     posts.push({ id, name, area });
-    res.redirect("/home");
+    res.redirect("/");
 });
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     res.render("Home.ejs", { posts });
 });
 
@@ -48,13 +48,13 @@ app.patch("/home/:id", (req, res) => {
     let postid = posts.find((p) => id === p.id);
     postid.area = content;
     console.log(postid);
-    res.redirect("/home");
+    res.redirect("/");
 });
 
 app.delete("/home/:id", (req, res) => {
     let { id } = req.params;
     posts = posts.filter((p) => id !== p.id);
-    res.redirect("/home");
+    res.redirect("/");
 })
 
 app.get("/home/:id/edit", (req, res) => {
